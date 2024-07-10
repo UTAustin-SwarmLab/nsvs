@@ -33,8 +33,31 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Towards Neuro-Symbolic Video Understanding</h1>
-          <div class="is-size-5 publication-venue">
-            Anonymous Authors
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Minkyu Choi<sup>1,2</sup>,</span>
+            <span class="author-block">
+              Harsh Goel<sup>&dagger; 1,2</sup>,</span>
+            <span class="author-block">
+              Mohammad Omama<sup>&dagger; 1,2</sup>,
+            </span>
+            <span class="author-block">
+              Yunhao Yang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Sahil Shah<sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              Sandeep Chinchali<sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Texas at Austin</span>
+            <span class="author-block"><sup>2</sup><a href="https://utaustin-swarmlab.github.io/">UT Swarm Lab</a></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">&dagger;Contributed equally to this work</span>
           </div>
           <div class="column has-text-centered">
             <div class="publication-links">
@@ -49,7 +72,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://www.google.com"
+                <a href="https://arxiv.org/abs/2403.11021"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -57,19 +80,9 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <!-- Video Link. -->
-              <span class="link-block">
-                <a href="https://www.google.com"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://www.google.com"
+                <a href="https://github.com/UTAustin-SwarmLab/Temporal-Logic-Video-Dataset"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -77,16 +90,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://www.google.com"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Slides</span>
-                  </a>
-            </div>
           </div>
         </div>
       </div>
@@ -104,8 +107,8 @@
       <h2 class="title is-3">Abstract</h2>
       <div class="content has-text-justified">
         <p>
-        The unprecedented surge in video data production in recent years necessitates efficient tools to extract meaningful frames from videos for downstream tasks. Long-term temporal reasoning is a key desideratum for frame retrieval systems. While state-of-the-art foundation models, like VideoLLaMA and ViCLIP, are proficient in short-term semantic understanding, they surprisingly fail at long-term reasoning across frames. A key reason for this failure is that they intertwine per-frame perception and temporal reasoning into a single deep network. Hence, decoupling but co-designing semantic understanding and temporal reasoning is essential for efficient scene identification. We propose a system that leverages vision-language models for semantic understanding of individual frames but effectively reasons about the long-term evolution of events using state machines and temporal logic (TL) formulae that inherently capture memory. Our TL-based reasoning improves the F1 score of complex event identification by 9-15% compared to benchmarks that use GPT4 for reasoning on state-of-the-art self-driving datasets such as Waymo and NuScenes.
-      </div>
+The unprecedented surge in video data production in recent years necessitates efficient tools to extract meaningful frames from videos for downstream tasks. Long-term temporal reasoning is a key desideratum for frame retrieval systems. While state-of-the-art foundation models, like VideoLLaMA and ViCLIP, are proficient in short-term semantic understanding, they surprisingly fail at long-term reasoning across frames. A key reason for this failure is that they intertwine per-frame perception and temporal reasoning into a single deep network. Hence, decoupling but co-designing the semantic understanding and temporal reasoning is essential for efficient scene identification. We propose a system that leverages vision-language models for semantic understanding of individual frames but effectively reasons about the long-term evolution of events using state machines and temporal logic (TL) formulae that inherently capture memory. Our TL-based reasoning improves the F1 score of complex event identification by 9-15% compared to benchmarks that use GPT-4 for reasoning on state-of-the-art self-driving datasets such as Waymo and NuScenes. The source code is available on <a href="https://github.com/UTAustin-SwarmLab/Temporal-Logic-Video-Dataset">Github</a>.
+     </div>
     </div>
   </div>
 </section>
