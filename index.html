@@ -51,7 +51,7 @@
           <a class="navbar-item" href="https://utaustin-swarmlab.github.io/nsvs/">
             NSVS
           </a>
-          <a class="navbar-item" href="https://utaustin-swarmlab.github.io/neusv/">
+          <a class="navbar-item" href="https://utaustin-swarmlab.github.io/NeuS-V/">
             NeuS-V
           </a>
         </div>
@@ -171,7 +171,7 @@ The unprecedented surge in video data production in recent years necessitates ef
     <br>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/fig1_teaser.png" alt="Method Overview">
+        <img src="static/images/fig1_teaser.png" alt="Method Overview" class="zoomable-image">
       </div>
     </div>
     <p>
@@ -227,13 +227,13 @@ The unprecedented surge in video data production in recent years necessitates ef
   <div class="columns is-centered">
     <div class="column">
       <div class="content">
-        <img src="static/images/fig5b_performance_in_durations.png">
+        <img src="static/images/fig5b_performance_in_durations.png" class="zoomable-image">
       </div>
     </div>
     <div class="column">
       <div class="columns is-centered">
         <div class="column content">
-          <img src="static/images/fig5a_performance_different_nn.png">
+          <img src="static/images/fig5a_performance_different_nn.png" class="zoomable-image">
         </div>
       </div>
     </div>
@@ -250,7 +250,7 @@ The unprecedented surge in video data production in recent years necessitates ef
     baselines. 
   </p>
   <br>
-  <img src="static/images/fig6_performance_result.png">
+  <img src="static/images/fig6_performance_result.png" class="zoomable-image">
 </div>
 <br>
 
@@ -281,6 +281,36 @@ The unprecedented surge in video data production in recent years necessitates ef
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".zoomable-image");
+    const zoomOverlay = document.createElement("div");
+    zoomOverlay.classList.add("zoom-overlay");
+    const zoomImage = document.createElement("img");
+    zoomOverlay.appendChild(zoomImage);
+    document.body.appendChild(zoomOverlay);
+    images.forEach((img) => {
+      const highResSrc = img.getAttribute("data-highres");
+      if (highResSrc) {
+        const preloadImg = new Image();
+        preloadImg.src = highResSrc;
+      }
+
+      img.addEventListener("click", () => {
+        zoomImage.src = highResSrc || img.src;
+        zoomOverlay.classList.add("active");
+      });
+    });
+    zoomOverlay.addEventListener("click", () => {
+      zoomOverlay.classList.remove("active");
+      zoomImage.src = "";
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") zoomOverlay.classList.remove("active");
+    });
+  });
+</script>
 
 </body>
 </html>
